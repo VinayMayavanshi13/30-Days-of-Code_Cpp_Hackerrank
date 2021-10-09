@@ -1,0 +1,23 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main(){
+   double meal_cost;
+   int tip_percent,tax_percent;
+   double tip,tax,bill; 
+   scanf("%lf\n %d\n %d\n",&meal_cost,&tip_percent,&tax_percent);
+   tip = (tip_percent/100.0)*meal_cost;
+   tax = (tax_percent/100.0)*meal_cost;
+   bill= meal_cost + tip + tax;
+   printf("%.0lf",bill);
+    
+    return 0;
+}
