@@ -1,0 +1,59 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int actualDay,actualMonth,actualYear;
+    cin >> actualDay >> actualMonth >> actualYear ; 
+    int expectedDay,expectedMonth,expectedYear;
+    cin >> expectedDay >> expectedMonth >> expectedYear;
+    
+    if(actualYear == expectedYear)
+    {
+        if(actualMonth == expectedMonth)
+        {
+           if(actualDay == expectedDay) 
+           {
+               cout << 0 << endl;
+           }
+           else
+           {
+               if(actualDay > expectedDay)
+               {
+                   int fine = 15 * (actualDay - expectedDay);
+                   cout << fine << endl;
+               }
+           }
+        }
+        else
+        {
+            if(actualMonth > expectedMonth)
+            {
+                int fine = 500 * (actualMonth - expectedMonth);
+                cout << fine << endl;
+            }
+            else
+            {
+                cout << 0 << endl;
+            }
+        }
+    }
+    else
+    {
+        if(actualYear > expectedYear)
+        {
+            cout << 10000 << endl;
+        }
+        else
+        {
+            cout << 0 << endl;
+        }
+    }
+    
+    return 0;
+}
