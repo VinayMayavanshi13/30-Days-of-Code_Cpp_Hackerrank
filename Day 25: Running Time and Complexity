@@ -1,0 +1,49 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+      
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int number;
+        int check = 0;
+        cin >> number;
+        
+        if(number<2)
+        {
+            cout << "Not prime" << endl;
+        }
+        else
+        {
+            for(int i = 2 ; i*i <= number ; i++) // Be careful for this loop, i = 2 and <= number is important
+            {
+               if(number % i == 0) 
+               {
+                   check = 1;
+                   break;
+               }
+            }
+            
+            if(check == 1)
+            {
+                cout << "Not prime" << endl;
+            }
+            else
+            {
+                cout << "Prime" << endl;
+            }
+            
+        }
+        
+    }
+    
+    return 0;
+}
